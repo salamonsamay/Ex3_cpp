@@ -23,6 +23,7 @@ int main() {
     double xvalue = solve(2*x-4.0 == 10.0);   // xvalue == 7
 
     ComplexVariable y;
+
     std::complex<double> yvalue = solve(2*y-4 == 10);
     cout << yvalue << endl;  // 7+0i  (can be in any other format)
 
