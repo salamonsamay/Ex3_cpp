@@ -1,136 +1,160 @@
 #include <stdexcept>
-#include <iostream>
 #include "solver.hpp"
 
-using namespace std;
-using namespace solver;
-
-////////////////////////////////////RealVariable space///////////////////////////////////////
-const RealVariable operator+ (const double& num, const RealVariable& realVar)
+namespace solver
 {
-    return RealVariable(realVar.getVarA());
-}
+    //solve for RealVariable
+    const double solve(RealVariable realVariable)
+    {
+        return realVariable.getVarA();
+    }
 
-const RealVariable operator+ (const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    //solve for ComplexVariable
+    const std::complex<double> solve(ComplexVariable c)
+    {
+        return c.getComplex();
+    } 
 
-const RealVariable operator- (const double& num, const RealVariable& realVar)
-{
-    return RealVariable(realVar.getVarA());
-}
+    ///////////////////////////Operators of RealVariable////////////////////////////
+    const RealVariable operator+(const RealVariable& other, const RealVariable& other1) 
+    {
+        return other;
+    }
 
-const RealVariable operator- (const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator+ (const double& num, const RealVariable& realVar)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-const RealVariable operator* (const double& num, const RealVariable& realVar)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator+ (const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }    
 
-const RealVariable operator* (const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator-(const RealVariable& other, const RealVariable& other1) 
+    {
+        return other;
+    }
 
-const RealVariable operator/ (const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator- (const double& num, const RealVariable& realVar)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-const RealVariable operator== (const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator- (const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-RealVariable operator^(const RealVariable& realVar, const double& num)
-{
-    return RealVariable(realVar.getVarA());
-}
+    const RealVariable operator* (const double& num, const RealVariable& realVar)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-ostream& operator<< (ostream& os, const RealVariable&)
-{
-    return os;
-}
-//double operator() (const RealVariable& realVar);
-//double operator()();
+    const RealVariable operator* (const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
+    const RealVariable operator/ (const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-//////////////////////////////////////////////end RealVariable space////////////////////////////////////
+    const RealVariable operator== (const RealVariable& other, const RealVariable& other1)
+    {
+        return other;
+    }
 
+    const RealVariable operator== (const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-const double solve(RealVariable realVariable)
-{
-    return realVariable.getVarA();
-}
+    RealVariable operator^(const RealVariable& realVar, const double& num)
+    {
+        return RealVariable(realVar.getVarA());
+    }
 
-const std::complex<double> solve(ComplexVariable c)
-{
-    return c.getComplex();
-}
+    ostream& operator<< (ostream& os, const RealVariable&)
+    {
+        return os;
+    }
 
+    ///////////////////////////Operators of ComplexVariable////////////////////////////
 
-////////////////////////////////////ComplexVariable space///////////////////////////////////////
+    const ComplexVariable operator+(const ComplexVariable& other, const ComplexVariable& other1)  
+    {
+        return other;
+    }
 
-const ComplexVariable operator+ (const double& num, const ComplexVariable& compVar)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator+ (const double& num, const ComplexVariable& compVar)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator+ (const ComplexVariable& compVar, const double& num)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator+ (const ComplexVariable& compVar, const double& num)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator+ (const ComplexVariable& compVar1, std::complex<double> c)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator+ (const ComplexVariable& compVar1, std::complex<double> c)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator+ (std::complex<double> c, ComplexVariable& compVar1)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator+ (std::complex<double> c, ComplexVariable& compVar1)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator- (const double& num, const ComplexVariable& compVar)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator-(const ComplexVariable& other, const ComplexVariable& other1) 
+    {
+        return other;
+    }
 
-const ComplexVariable operator- (const ComplexVariable& compVar, const double& num)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator- (const double& num, const ComplexVariable& compVar)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator/ (const ComplexVariable& compVar, const double& num)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator- (const ComplexVariable& compVar, const double& num)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator* (const double& num, const ComplexVariable& compVar)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator/ (const ComplexVariable& compVar, const double& num)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator* (const ComplexVariable& compVar, const double& num)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator* (const double& num, const ComplexVariable& compVar)
+    {
+        return ComplexVariable();
+    }
 
-const ComplexVariable operator== (const ComplexVariable& compVar,const double& num)
-{
-    return ComplexVariable();
-}       
+    const ComplexVariable operator* (const ComplexVariable& compVar, const double& num)
+    {
+        return ComplexVariable();
+    }
 
-ComplexVariable operator^ (const ComplexVariable& compVar, const double& num)
-{
-    return ComplexVariable();
-}
+    const ComplexVariable operator== (const ComplexVariable& other, const ComplexVariable& other1)
+    {
+        return other;
+    }
 
-ostream& operator<< (ostream& os, const ComplexVariable& compVar)
-{
-    return os;
+    const ComplexVariable operator== (const ComplexVariable& compVar,const double& num)
+    {
+        return ComplexVariable();
+    }        
+
+    ComplexVariable operator^ (const ComplexVariable& compVar, const double& num)
+    {
+        return ComplexVariable();
+    }
+
+    ostream& operator<< (ostream& os, const ComplexVariable& compVar)
+    {
+        return os;
+    }
 }
