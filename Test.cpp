@@ -37,7 +37,7 @@ TEST_CASE("Test case 2 - RealVariable - CHECK")
     CHECK(solve(x + 1 == 0.0) == -1.0);
     CHECK(solve(x - 1 == 0.0) == 1.0);
 }
-
+/*
 
 TEST_CASE("Test case 3 - ComplexVariable - CHECK")
 {
@@ -97,7 +97,7 @@ TEST_CASE("Test case 3 - ComplexVariable - CHECK")
 //////////////57
 
 }
-
+*/
 TEST_CASE("Test case 4 - RealVariable")
 {
     RealVariable x;

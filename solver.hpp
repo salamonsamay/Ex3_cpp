@@ -10,29 +10,43 @@ namespace solver
     class RealVariable
     {
         private:
-            double varA, varB, varC;
+            double A, B, C;
 
         public:
-            RealVariable(const double& A  = 0.0, const double& B  = 0.0 ,const double& C  = 0.0) 
-                : varA(A), varB(B), varC(C){}
-            double getVarA() const {return varA;}
-            double getVarB() const {return varB;}
-            double getVarC() const {return varC;}  
+            RealVariable(const double& a  = 0.0, const double& b  = 0.0 ,const double& c  = 0.0) 
+                : A(a), B(b), C(c){}
+            double getA() const {return A;}
+            double getB() const {return B;}
+            double getC() const {return C;}  
+            void setA(const double& a) {A += a;}
+            void setB(const double& b) {B += b;}
+            void setC(const double& c) {C += c;}
 
             friend const RealVariable operator+ (const RealVariable&, const RealVariable&);
             friend const RealVariable operator+ (const double&, const RealVariable&);
             friend const RealVariable operator+ (const RealVariable&, const double&);
+
             friend const RealVariable operator- (const RealVariable&, const RealVariable&);
             friend const RealVariable operator- (const double&, const RealVariable&);
             friend const RealVariable operator- (const RealVariable&, const double&);
+
             friend const RealVariable operator/ (const RealVariable&, const double&);
+
             friend const RealVariable operator* (const double&, const RealVariable&);
             friend const RealVariable operator* (const RealVariable&, const double&);
+            friend const RealVariable operator* (const RealVariable&, const RealVariable&);
+
             friend const RealVariable operator== (const RealVariable&,const double&);
-            friend const RealVariable operator== (const RealVariable&, const RealVariable&);   
+            friend const RealVariable operator== (const RealVariable&, const RealVariable&);
+            friend const RealVariable operator== (const double&, const RealVariable&);
+
             friend RealVariable operator^ (const RealVariable&, const double&);
             friend ostream& operator<< (ostream& os, const RealVariable&);
     };
+    const double solve(RealVariable);
+
+
+
 
 
     class ComplexVariable
@@ -76,8 +90,6 @@ namespace solver
         friend ostream& operator<< (ostream& os, const ComplexVariable&);
         //friend ComplexVariable operator"" i(unsigned long long);
     };
-
-        const double solve(RealVariable);
-        const std::complex<double> solve(ComplexVariable);
+    const std::complex<double> solve(ComplexVariable);
 
 }
